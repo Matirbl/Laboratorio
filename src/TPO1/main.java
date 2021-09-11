@@ -25,11 +25,11 @@ public class main {
         }
 
 
+        Future<String>[] tareas= new Future[suscriptores.length];
 
+        for (int j = 0; j <tareas.length; j++) {
 
-        for (int j = 0; j <suscriptores.length; j++) {
-
-            Future<String> task1 = executor.submit(suscriptores[i]);
+            tareas[j]  = executor.submit(suscriptores[j]);
 
         }
 
