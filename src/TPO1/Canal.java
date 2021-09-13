@@ -8,13 +8,13 @@ import java.util.List;
 public class Canal implements Observado {
 
 
-    private final List<Observador> suscriptoresCanal;
+    private final List<Observador> suscriptoresCanal;           //Creamos una lista para guardar los suscriptores del canal
 
     public Canal() {
         suscriptoresCanal = new LinkedList<>();
     }
 
-    public void suscribirse(Observador s) {
+    public void suscribirse(Observador s) {                     //Suscribirse implica añardir el suscriptor a la lista del canal
 
         suscriptoresCanal.add(s);
 
@@ -26,11 +26,18 @@ public class Canal implements Observado {
     }
 
 
+    public void subirVideo(String título){
+
+        System.out.println("Nuevo video en el canal, " + título + ", deja tu calificación");
+        this.notificar();
+
+    }
+
+
     public void notificar() {
 
         for (Observador o : suscriptoresCanal) {
             o.actualizar();
-
         }
 
 
