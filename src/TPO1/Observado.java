@@ -1,24 +1,33 @@
 package TPO1;
 
+import java.util.LinkedList;
 import java.util.List;
 
-public interface Observado {
+public abstract class Observado {
 
-    List<Observador> observadores = null;
 
-    static void enlazar(Observador o){
+    List<Observador> observadores;
+
+
+    public Observado(){
+        observadores = new LinkedList<>();
+    }
+
+    public void enlazar(Observador o){
         observadores.add(o);
     }
 
-    static void desEnlazar(Observador o){
+    public void desEnlazar(Observador o){
         observadores.remove(o);
     }
 
 
-    static void notificar() {
+    public void notificar() {
 
         for (Observador o : observadores) {
             o.actualizar();
     }
 }
+
+
 }

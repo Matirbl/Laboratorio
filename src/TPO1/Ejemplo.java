@@ -20,7 +20,7 @@ public class Ejemplo {
         for (int i = 0; i < suscriptores.length; i++) {
 
             suscriptores[i] = new Suscriptor(" suscriptor " + i);
-            canalYouTube.suscribirse(suscriptores[i]);
+            canalYouTube.enlazar(suscriptores[i]);
         }
 
         canalYouTube.subirVideo(" Aprendiendo executor service");
@@ -30,9 +30,13 @@ public class Ejemplo {
 
         for (int j = 0; j <calificaciones.length; j++) {
             calificaciones[j]  = executor.submit(suscriptores[j]);
-
-            System.out.println("El usuario " + j + " califico el video con una puntuación de : " + calificaciones[j].get());
         }
 
+
+        for (int k = 0; k < calificaciones.length; k++) {
+            System.out.println("El usuario " + k + " calificó el video con una puntuación de : " + calificaciones[k].get());
+
+        }
+        executor.shutdown();
     }
 }
