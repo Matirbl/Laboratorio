@@ -15,7 +15,7 @@ public class Ejemplo {
 
         Suscriptor[] suscriptores = new Suscriptor[10];
 
-        ExecutorService executor = Executors.newFixedThreadPool(1);
+        ExecutorService executor = Executors.newFixedThreadPool(suscriptores.length);
 
         for (int i = 0; i < suscriptores.length; i++) {
 

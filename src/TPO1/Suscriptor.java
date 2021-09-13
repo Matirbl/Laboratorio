@@ -16,7 +16,8 @@ public class Suscriptor implements Observador, Callable<Integer> {
 
     @Override
     public void actualizar() {
-        if(estado == "Desconectado"){
+        if(estado == "Desconectado"){                                       //El estado lo pusimos para que sea útil el patrón observer, es decir, para que avise
+                                                                            //a aquellos usuarios que están desconectados que se subió un nuevo video
         System.out.println( nombre + " está ingresando a ver el video");
         this.estado= "Conectado";
         try {

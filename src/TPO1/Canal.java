@@ -27,11 +27,14 @@ public class Canal implements Observado {
 
 
     public void subirVideo(String título){
-
-        System.out.println("Nuevo video en el canal, " + título + ", deja tu calificación");
+        System.out.println(  "\n");
+        System.out.println("[---------- Nuevo video en el canal, " + título + ", deja tu calificación ----------]");
         this.notificar();
 
     }
+
+
+
 
 
     public void notificar() {
