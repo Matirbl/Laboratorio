@@ -1,18 +1,17 @@
 package TPO1;
 
+import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Semaphore;
 
 public class Suscriptor implements Observador, Callable<Integer> {
-
     private String nombre;
-    private String estado;
-    private String estados[] = {"Conectado", "Desconectado"};
+    private boolean viendo;
     private Semaphore aviso = new Semaphore(0);
 
     public Suscriptor(String nombre) {
         this.nombre = nombre;
-        this.estado = estados[(int) (Math.random() * 2)];
+        this.viendo = (new Random()).nextBoolean();
     }
 
     @Override
@@ -21,7 +20,7 @@ public class Suscriptor implements Observador, Callable<Integer> {
     }
 
     public void verVideo() {
-        if (estado == "Desconectado") {
+        if (!viendo) {
             System.out.println(nombre + " está ingresando a ver el video");
             try {
                 Thread.sleep(1000);
@@ -36,17 +35,23 @@ public class Suscriptor implements Observador, Callable<Integer> {
                 e.printStackTrace();
             }
         }
-        this.estado = estados[(int) (Math.random() * 2)];
+        this.viendo = obtenerEstadoNuevo();
 
     }
 
+    public boolean obtenerEstadoNuevo() {
+        return (new Random()).nextBoolean();
+    }
 
+    public int calificarVideo() {
+        //Retorna un número aleatorio entre 1 y 10
+        return (int) (Math.random() * 10) + 1;
+    }
 
     @Override
     public Integer call() throws Exception {
         aviso.acquire();
         verVideo();
-        int calificacion = (int) (Math.random() * 10) + 1;  //Retorna un número aleatorio entre 1 y 10
-        return calificacion ;
-     }
+        return calificarVideo();
+    }
 }
