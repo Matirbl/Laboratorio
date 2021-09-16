@@ -7,15 +7,17 @@ import java.util.concurrent.Semaphore;
 public class Suscriptor implements Observador, Callable<Integer> {
     private String nombre;
     private boolean viendo;
-    private Semaphore aviso = new Semaphore(0);
+    private Semaphore aviso = new Semaphore(0);         //Semaforo utilizado para simular concurrencia al momento de notificar a los suscriptores
+
 
     public Suscriptor(String nombre) {
         this.nombre = nombre;
-        this.viendo = (new Random()).nextBoolean();
-    }
+        this.viendo = (new Random()).nextBoolean();            //Simulamos que un usuario podía no estar conectado esperando el video, por lo que la
+    }                                                          //notificación iba a ser de utilidad.
 
     @Override
-    public void actualizar() {
+    public void actualizar() {                                 //El canal me notificó que se subió un video.
+
         aviso.release();
     }
 
@@ -40,13 +42,13 @@ public class Suscriptor implements Observador, Callable<Integer> {
     }
 
     public boolean obtenerEstadoNuevo() {
+
         return (new Random()).nextBoolean();
     }
 
     public int calificarVideo() {
-        //Retorna un número aleatorio entre 1 y 10
-        return (int) (Math.random() * 10) + 1;
-    }
+        return (int) (Math.random() * 10) + 1;                 //Retorna un número aleatorio entre 1 y 10 que representa
+    }                                                          //la calificación que le pusieron al video
 
     @Override
     public Integer call() throws Exception {

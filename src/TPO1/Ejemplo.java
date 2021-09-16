@@ -26,17 +26,21 @@ public class Ejemplo {
         canalYouTube.subirVideo(" Aprendiendo executor service");
 
 
-        Future[] calificaciones= new Future[suscriptores.length];     // Calificaciones son las tereas asignadas a cada hilo Suscriptor
+        Future[] calificaciones = new Future[suscriptores.length];     // Calificaciones son las tereas asignadas a cada hilo Suscriptor
 
-        for (int j = 0; j <calificaciones.length; j++) {
-            calificaciones[j]  = executor.submit(suscriptores[j]);
+        for (int j = 0; j < calificaciones.length; j++) {
+            calificaciones[j] = executor.submit(suscriptores[j]);
         }
 
-
+        int promedio = 0;
         for (int k = 0; k < calificaciones.length; k++) {
+            promedio += (int) calificaciones[k].get();
             System.out.println("El usuario " + k + " calificó el video con una puntuación de : " + calificaciones[k].get());
 
         }
+
+        System.out.println("El video tuvo un promedio de puntuación de: " + promedio / calificaciones.length);
+
         executor.shutdown();
     }
 }
