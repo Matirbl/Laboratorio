@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Casa musical GM</title>
+    <meta name="description" content="Bienvenido a la página web musical de la UNCO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos/css/bootstrap.min.css" rel="stylesheet">
+    <link href="estilos/personalizado/indiceViejo.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/151ff178bd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="row div-global">
+
+        <div class="col-12">
+            <!-- NAVBAR  -->
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-md navbar-light bg-light border-3 border-bottom border-primary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#"><img class="img-thumbnail" src="Imagenes/Logo.jpg"
+                                width="90px"></a>
+                        <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+                            data-bs-target="#MenuNavegacion">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div id="MenuNavegacion" class="collapse navbar-collapse">
+                            <ul class="navbar-nav ms-3">
+                                <li class="nav-item"><a class="nav-link" href="#">inicio</a></li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown">instrumentos</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#"><i class="fas fa-guitar"></i>
+                                                Guitarras</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#"><i class="fas fa-drum"></i> Baterias</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#"><i class="fas fa-play-circle"></i>
+                                                Bajos</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fas fa-play-circle"></i>
+                                                Teclados</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#">contacto</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">mas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="col-12">
+            <!-- CARRUSEL  -->
+            <div id="carruselAnuncios" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carruselAnuncios" data-slide-to="0" class="active"></li>
+                    <li data-target="#carruselAnuncios" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagenes/Anuncio.jpg" alt="..." class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/Schecter Synyster Gates signature.jpg" alt="..." class="d-block w-100">
+                    </div>
+                </div>
+                <a href="#carruselAnuncios" class="carousel-control-prev" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </a>
+                <a href="#carruselAnuncios" class="carousel-control-next" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </a>
+            </div>
+
+        </div>
+        <div class="col-12">
+            <!-- CARTAS  -->
+            <div class="container" id="fondo">
+
+                <div class="card">
+                    <img src="imagenes/guitarraCarta.jpg">
+                    <h4>guitarras</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                    <button type="button" class="btn btn-primary"><a href="#">Conocer más</a></button>
+                </div>
+
+                <div class="card">
+                    <img src="imagenes/pianosCarta.jpg">
+                    <h4>pianos</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                    <button type="button" class="btn btn-primary"><a href="#">Conocer más</a></button>
+                </div>
+
+                <div class="card">
+                    <img src="imagenes/bateriaCarta.jpg">
+                    <h4>baterias</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                    <button type="button" class="btn btn-primary"><a href="#">Conocer más</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+
+        </div>
+        <!-- FOOTER  -->
+        <footer>
+            <!-- <footer class="container-fluid">  -->
+            <div class="row">
+
+                <div class="col-md-6">
+                    <h3>Mapa de Sitio</h3>
+                    <ul>
+                        <li>inicio</li>
+                        <li>historia</li>
+                        <li>instrumentos</li>
+                        <li>contacto</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6">
+                    <h3>Datos de Contacto</h3>
+                    <ul>
+                        <li>Dirección: Buenos Aires 1400, Q8300 Neuquén </li>
+                        <li>Teléfono: 299 499-4233</li>
+                        <li>Provincia: Neuquén</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="container-fluid">
+                <p class="text-center">&copy; Copyright 2021 - Web musical</p>
+            </div>
+
+        </footer>
+    </div>
+
+    <script src="estilos/js/bootstrap.min.js"></script>
+    <script src="estilos/js/bootstrap.bundle.js"></script>
+    <script src="estilos/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

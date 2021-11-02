@@ -1,0 +1,65 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    font: size 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+li {
+    font-family: cursive;
+}
+
+h2 {
+    font: bold 14px sans-serif;
+}
+
+header, section, footer, aside, nav, article {
+    display: block;
+}
+
+body {
+    text-align: center;
+}
+
+.agrupar {
+    width: 960px;
+    border: 1px solid black;
+    margin: 15px auto;
+}
+
+.cabecera {
+    background: #b96e3c;
+    border: 1px #9192aa;
+    padding: 20px;
+}
+
+.cabecera h1 {
+    text-align: left;
+}
+
+.menu {
+    background: #1f68b1;
+    border: 1px #9192aa;
+    text-align: left;
+}
+
+.menu li {
+    list-style: none;
+    padding: 5px;
+    font: 14px bold verdana;
+    display: inline-block;
+}
+
+.seccion {
+    margin: 20px;
+    border: 1px solid black;
+}
+
+.columna {
+    width: 200px;
+    border: 1px solid black;
+}
