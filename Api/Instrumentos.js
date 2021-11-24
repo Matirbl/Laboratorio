@@ -57,35 +57,13 @@ app.get('/instrumentos/:id', (req, res) => {
   let instrumento = instrumentos.find(i => i.id == params.id);
 
   if (!instrumento) {
-    //   instrumento=falsy
     return res.sendStatus(404)
   }
 
   res.send(casa)
 })
 
-app.put('/casa/:id', (req, res) => {
-  const { params, body } = req;
-  //params = req.params
-  //body = req.body
 
-  //renombra cantidadAmbientes a ca, e inicializa a 0
-  const { calle, cantidadAmbientes: ca = 0 } = body;
-  //calle = body.calle
-
-  let casa = casas.find(c => c.id == params.id);
-
-  if (!casa) {
-    //casa=falsy
-    return res.sendStatus(404)
-  }
-
-  casa.direccion.calle = calle;
-
-  res.send(casa)
-})
-
-//comentario 1
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`)
 })
