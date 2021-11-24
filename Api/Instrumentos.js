@@ -54,10 +54,11 @@ app.post('/instrumento', (req, res) => {
 app.get('/instrumentos/:id', (req, res) => {
   const { params } = req;
 
-  let casa = casas.find(c => c.id == params.id);
+  let instrumento = instrumentos.find(i => i.id == params.id);
 
-  if (!casa) {
-    //casa=falsy
+  if (!instrumento) {
+    //   instrumento=falsy
+    return res.sendStatus(404)
   }
 
   res.send(casa)
